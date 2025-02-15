@@ -3,6 +3,8 @@ spring:
     name: fillWordFileBot
   jpa:
     show-sql: true
+    hibernate:
+      ddl-auto: update
   datasource:
       driver-class-name: org.postgresql.Driver
       url: jdbc:postgresql://localhost:5432/fill_word_file_bot?currentSchema=public

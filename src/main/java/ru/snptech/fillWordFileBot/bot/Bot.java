@@ -1,13 +1,18 @@
-package ru.snptech.fillWordFileBot;
+package ru.snptech.fillWordFileBot.bot;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 import org.telegram.telegrambots.bots.TelegramLongPollingBot;
 
 import org.telegram.telegrambots.meta.api.objects.Update;
+import ru.snptech.fillWordFileBot.service.UserService;
 
 @Component
 public class Bot extends TelegramLongPollingBot {
+
+    @Autowired
+    private UserService service;
 
     public Bot(@Value("${bot.token}") String botToken) {
         super(botToken);

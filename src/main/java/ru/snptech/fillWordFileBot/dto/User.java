@@ -25,7 +25,7 @@ public class User {
 
     private LocalDate birthDate;
 
-    private String Sex;
+    private String sex;
 
     private String photoPath;
 }

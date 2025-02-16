@@ -1,0 +1,24 @@
+version: "3.10"
+services:
+  db:
+    image: postgres:16
+    container_name: fill_word_file_bot_db
+    ports:
+      - "5432:5432"
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=local
+      - POSTGRES_DB=fill_word_file_bot
+  app:
+    build: .
+    container_name: fill_word_file_bot
+    ports:
+      - "5434:5434"
+    depends_on:
+      - fill_word_file_bot_db
+    environment:
+      - DB_HOST=localhost
+      - DB_PORT=5432
+      - DB_NAME=fill_word_file_bot
+      - DB_USERNAME=postgres
+      - DB_PASSWORD=local

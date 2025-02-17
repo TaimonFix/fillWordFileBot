@@ -14,8 +14,6 @@ services:
     container_name: fill_word_file_bot
     ports:
       - "5434:5434"
-    depends_on:
-      - fill_word_file_bot_db
     environment:
       - DB_HOST=localhost
       - DB_PORT=5432
